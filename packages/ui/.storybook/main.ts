@@ -1,7 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-import { join, dirname } from "path";
-
+import path, { join, dirname } from "path";
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
@@ -17,9 +16,19 @@ const config: StorybookConfig = {
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
   ],
+  core: {
+    builder: getAbsolutePath("@storybook/builder-vite"),
+  },
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
+  },
+  async viteFinal(config, options) {
+    config.resolve!.alias = {
+      ...config.resolve!.alias,
+      "_panda": path.resolve(__dirname, "../styled-system"),
+    };
+    return config;
   },
 };
 export default config;

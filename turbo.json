@@ -32,15 +32,14 @@
     "prepare": {
       "dependsOn": [
         "^prepare"
-      ]
-    },
-    "storybook": {
-      "dependsOn": [
-        "^storybook"
       ],
       "outputs": [
         "styled-system/**"
       ]
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
