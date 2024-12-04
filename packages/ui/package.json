@@ -11,15 +11,28 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "panda codegen"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
     "@hgt-client/eslint-config": "workspace:*",
     "@hgt-client/typescript-config": "workspace:*",
+    "@pandacss/dev": "^0.48.0",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-interactions": "^8.4.6",
+    "@storybook/addon-onboarding": "^8.4.6",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/react": "^8.4.6",
+    "@storybook/react-vite": "^8.4.6",
+    "@storybook/test": "^8.4.6",
     "@turbo/gen": "^1.12.4",
     "@types/node": "^20.11.24",
     "@types/react": "18.3.0",
     "@types/react-dom": "18.3.1",
+    "storybook": "^8.4.6",
     "typescript": "5.5.4"
   },
   "dependencies": {

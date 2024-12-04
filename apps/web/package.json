@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "panda codegen"
   },
   "dependencies": {
     "@hgt-client/ui": "workspace:*",
@@ -17,11 +20,21 @@
     "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
     "@hgt-client/eslint-config": "workspace:*",
     "@hgt-client/typescript-config": "workspace:*",
+    "@pandacss/dev": "^0.48.0",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-interactions": "^8.4.6",
+    "@storybook/addon-onboarding": "^8.4.6",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/nextjs": "^8.4.6",
+    "@storybook/react": "^8.4.6",
+    "@storybook/test": "^8.4.6",
     "@types/node": "^20",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
+    "storybook": "^8.4.6",
     "typescript": "5.5.4"
   }
 }

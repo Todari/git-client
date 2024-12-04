@@ -1,11 +1,19 @@
 {
   "extends": "@hgt-client/typescript-config/nextjs.json",
   "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "_panda/*": ["./styled-system/*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": false,
+    "strictNullChecks": true,
+    "types": ["@pandacss/dev"]
   },
   "include": [
     "next-env.d.ts",
